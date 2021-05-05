@@ -36,7 +36,7 @@ if(fullName.length ==0){
    }
  else
    {
-    nameAlert.innerHTML="Enter String Only";
+    nameAlert.innerHTML="Enter Your Correct Name";
    } 
 }
 }
