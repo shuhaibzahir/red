@@ -22,13 +22,23 @@ menus.forEach((menu)=>{
 
 
 //  validation number
-var nameValidate = document.getElementById("fullname");
- 
-function nameChk(){
-    document.getElementById('name-alert').innerHTML="Full Name is Required"
-    if(nameValidate.value.length > 3){
-        document.getElementById('name-alert').innerHTML=" ";
-    }
+function nameChek(){
+var fullName = document.getElementById("fullname").value;
+var nameAlert = document.getElementById('name-alert');
+
+ var letters = /^[A-Za-z]+$/;
+if(fullName.length ==0){
+ nameAlert.innerHTML="Full Name is Required";
+}else{
+  if(fullName.match(letters))
+   {
+     nameAlert.innerHTML=" ";
+   }
+ else
+   {
+    nameAlert.innerHTML="Enter String Only";
+   } 
+}
 }
 
 
