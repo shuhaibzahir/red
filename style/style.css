@@ -398,6 +398,11 @@ html {
   .abot-content {
     padding: 5px;
     border-left: none;
+    text-align: start;
+  }
+  .p-cont {
+    padding-right: 0px;
+    padding-left: 0px;
   }
 }
 /* service */
