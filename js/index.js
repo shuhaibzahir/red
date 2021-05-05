@@ -26,7 +26,7 @@ function nameChek(){
 var fullName = document.getElementById("fullname").value;
 var nameAlert = document.getElementById('name-alert');
 
- var letters = /^[A-Za-z]+$/;
+ var letters = /^[a-z][a-z\s]*$/;
 if(fullName.length ==0){
  nameAlert.innerHTML="Full Name is Required";
 }else{
