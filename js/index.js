@@ -1,4 +1,19 @@
  
+ 
+$(document).ready(function(){ 
+    $(window).scroll(function(){ 
+        if ($(this).scrollTop() > 100) { 
+            $('#scroll').fadeIn(); 
+        } else { 
+            $('#scroll').fadeOut(); 
+        } 
+    }); 
+    $('#scroll').click(function(){ 
+        $("html, body").animate({ scrollTop: 0 }, 600); 
+        return false; 
+    }); 
+});
+
 function hover(st){
     document.querySelector(".hover-menu").textContent=st;
 }
@@ -22,47 +37,80 @@ menus.forEach((menu)=>{
 
 
 //  validation number
-function nameChek(){
-var fullName = document.getElementById("fullname").value;
-var nameAlert = document.getElementById('name-alert');
 
- var letters = /^[a-z][a-z\s]*$/;
-if(fullName.length ==0){
- nameAlert.innerHTML="Full Name is Required";
-}else{
-  if(fullName.match(letters))
-   {
-     nameAlert.innerHTML=" ";
-   }
- else
-   {
-    nameAlert.innerHTML="Enter Your Correct Name";
-   } 
+ 
+
+
+
+
+
+
+// validation
+const validated ={
+    name:false,
+    email:false,
+    phone:false
 }
-}
+ 
 
-
-function chekEmail(){
-    var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-    var emailCheck = document.getElementById('email').value;
-    var emailAlert = document.getElementById('email-alert');
-    if(emailCheck.match(pattern)){
-        emailAlert.innerHTML=" ";
-    }else{
-        emailAlert.innerHTML="Invalid Email Id";
-
-    }
-}
-
-
-function numberCheck(){
-    var patern = /^\d{10}$/;
-    var phoneNumber = document.getElementById('phone').value;
-    var phoneAlert = document.getElementById('phone-alert');
-    if(phoneNumber.match(patern)){
-        phoneAlert.innerHTML=""
-    }else{
-        phoneAlert.innerHTML="Enter A valid Phone Number";
+ function nameChek(){
+    var nameAlert = document.getElementById('name-alert');
+    var name = document.getElementById("fullname").value;
+    var expression = /^[a-zA-Z\s]*$/;
+   
+    if(name == ""){
+        validated.name= false;
+        nameAlert.innerHTML="*Required"
         
+    }else if(name.match(expression)){
+        nameAlert.innerHTML="";
+        validated.name= true;
+    }else{
+        nameAlert.innerHTML =" Enter Charecters only"
+        validated.name=false
     }
-}
+
+    }
+    // email check
+    function chekEmail(){
+        var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+        var emailCheck = document.getElementById('email').value;
+        var emailAlert = document.getElementById('email-alert');
+        if(emailCheck == ""){
+            validated.email= false;
+            emailAlert.innerHTML ="*Required"
+        }else if(emailCheck.match(pattern)){
+            emailAlert.innerHTML="";
+            validated.email= true;
+        }else{
+            emailAlert.innerHTML ="Invalid E-mail"
+            validated.email=false
+        }
+    }
+    
+    function numberCheck(){
+        var phnPattern = /^\d{10}$/;
+        var phoneNumber = document.getElementById('phone').value;
+        var phoneAlert = document.getElementById('phone-alert');
+        if(phoneNumber == ""){
+            validated.phone= false;
+            phoneAlert.innerHTML ="*Required"
+        }else if(phoneNumber.match(phnPattern)){
+            phoneAlert.innerHTML="";
+            validated.phone= true;
+        }else{
+            phoneAlert.innerHTML ="Invalid Phone Number"
+            validated.phone=false
+            
+        }
+    }
+   
+    function myValidation(){
+      
+        if(validated.name && validated.phone && validated.email){
+            return true;
+        }else{
+           alert("invalid form Details");
+            return false;
+        }
+    }
