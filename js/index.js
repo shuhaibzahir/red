@@ -55,7 +55,7 @@ const validated ={
  
  function checkMessage(){
      var messageValue= document.getElementById("message").value;
-     if(messageValue == ""||messageValue.null){
+     if(messageValue.length<=0){
          document.getElementById("messege-alert").innerHTML="Enter Your Message"
          validated.message=false;
      }else{
@@ -119,9 +119,12 @@ const validated ={
       
         if(validated.name && validated.phone && validated.email && validated.message){
             return true;
-        }else{
-           alert("invalid form Details");
+        }else if(validated.message==false){
+          document.getElementById("messege-alert").innerHTML="Please Enter Your Message"
            return false
             
+        }else{
+            alert("invalid Form Details");
+            return false
         }
     }
