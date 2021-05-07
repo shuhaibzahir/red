@@ -314,7 +314,7 @@ html {
   overflow: hidden;
   position: relative;
   min-height: 100vh;
-  background-image: url("https://github.com/shuhaibzahir/red/blob/main/assets/img/blk.png");
+  background-image: url("../assets/img/blk.png");
   background-repeat: no-repeat;
   background-position-x: 1000px;
   background-size: contain;
