@@ -56,8 +56,10 @@ const validated ={
  function checkMessage(){
      var messageValue= document.getElementById("message").value;
      if(messageValue == ""||messageValue.null){
+         document.getElementById("messege-alert").innerHTML="Enter Your Message"
          validated.message=false;
      }else{
+        document.getElementById("messege-alert").innerHTML=" ";
         validated.message =true
      }
  }
