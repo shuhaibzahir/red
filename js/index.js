@@ -49,10 +49,18 @@ menus.forEach((menu)=>{
 const validated ={
     name:false,
     email:false,
-    phone:false
+    phone:false,
+    message:false
 }
  
-
+ function checkMessage(){
+     var messageValue= document.getElementById("message").value;
+     if(messageValue == ""||messageValue.null){
+         validated.message=false;
+     }else{
+        validated.message =true
+     }
+ }
  function nameChek(){
     var nameAlert = document.getElementById('name-alert');
     var name = document.getElementById("fullname").value;
@@ -107,10 +115,11 @@ const validated ={
    
     function myValidation(){
       
-        if(validated.name && validated.phone && validated.email){
+        if(validated.name && validated.phone && validated.email && validated.message){
             return true;
         }else{
            alert("invalid form Details");
-            return false;
+           return false
+            
         }
     }
