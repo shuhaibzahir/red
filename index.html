@@ -48,10 +48,14 @@
                 </div>
             </div>
             <div class="social-media">
-                <a class="icon" href="https://in.linkedin.com/in/shuhaibzahir" target="_blank"><i class="fab fa-linkedin-in "></i> </a>
-                <a class="icon" href="https://github.com/shuhaibzahir" target="_blank"><i class="fab fa-github "></i></a>
-                <a class="icon" href="https://www.behance.net/shuhaibzahir" target="_blank"> <i class="fab fa-behance "></i></a>
-                <a class="icon" href="https://twitter.com/shuhaib_zahir" target="_blank"> <i class="fab fa-twitter "></i></a>
+                <a class="icon" href="https://in.linkedin.com/in/shuhaibzahir" target="_blank"><i
+                        class="fab fa-linkedin-in "></i> </a>
+                <a class="icon" href="https://github.com/shuhaibzahir" target="_blank"><i
+                        class="fab fa-github "></i></a>
+                <a class="icon" href="https://www.behance.net/shuhaibzahir" target="_blank"> <i
+                        class="fab fa-behance "></i></a>
+                <a class="icon" href="https://twitter.com/shuhaib_zahir" target="_blank"> <i
+                        class="fab fa-twitter "></i></a>
             </div>
         </div>
     </section>
@@ -257,10 +261,13 @@
                     <div class="image-div"><img src="./assets/img/contact.png" alt=""></div>
                     <div class="social-contact">
                         <a class="icon" href="https://in.linkedin.com/in/shuhaibzahir" target="_blank"><i
-                                class="fab fa-linkedin-in "></i> </a>
-                        <a class="icon" href="https://github.com/shuhaibzahir" target="_blank"><i class="fab fa-github "></i></a>
-                        <a class="icon" href="https://www.behance.net/shuhaibzahir" target="_blank"> <i class="fab fa-behance "></i></a>
-                        <a class="icon" href="https://twitter.com/shuhaib_zahir" target="_blank"> <i class="fab fa-twitter "></i></a>
+                                class="fab fa-linkedin-in " target="_blank"></i> </a>
+                        <a class="icon" href="https://github.com/shuhaibzahir" target="_blank"><i
+                                class="fab fa-github "></i></a>
+                        <a class="icon" href="https://www.behance.net/shuhaibzahir" target="_blank"> <i
+                                class="fab fa-behance "></i></a>
+                        <a class="icon" href="https://twitter.com/shuhaib_zahir" target="_blank"> <i
+                                class="fab fa-twitter "></i></a>
 
                     </div>
                 </div>
@@ -289,10 +296,10 @@
                                 <p class="validate" id="phone-alert"></p>
                             </div>
                             <div class="form-group mb-4">
-                                <label for="formGroupExampleInput2" class="mb-3">Subject</label>
+                                <label for="formGroupExampleInput2" class="mb-3">Message</label>
 
-                                <textarea name="message" id="" class="form-control" id="message" cols="30"
-                                    rows="8"></textarea>
+                                <textarea name="message" class="form-control" id="message" onkeyup="checkMessage()"
+                                    cols="30" rows="8"></textarea>
                             </div>
                             <button type="submit" class="btn btn-dark" id="submit-btn">Send</button>
                         </form>
@@ -326,7 +333,8 @@
                     }
                 })
             }
-            window.location.reload()
+
+
         })
     </script>
 </body>
